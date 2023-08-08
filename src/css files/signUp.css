@@ -1,0 +1,107 @@
+h2 {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    color: aliceblue;
+}
+
+.signUpContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(131, 58, 180, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.sginIn {
+    display: none;
+}
+
+.signUpForm {
+    margin-top: 27px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+    color: white;
+
+}
+
+.signUpForm p {
+    margin: 0;
+}
+
+
+.signUpForm input,
+button {
+    border-radius: 10px;
+    height: 32px;
+    border: none;
+    text-align: center;
+    padding: 3px 0;
+    font-family: sans-serif;
+
+}
+
+.signUpForm .signInbtn {
+    height: 40px;
+    font-weight: 600;
+    background-color: rgb(69, 69, 201);
+    color: white;
+
+}
+
+.signUpForm .googleBtn {
+    height: 40px;
+    background-color: rgb(156, 20, 20);
+    color: white;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.googleIcon {
+    font-size: 16px;
+    background-color: white;
+    border-radius: 50%;
+
+}
+
+.signLink {
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 19px;
+    color: rgb(98, 98, 212);
+
+}
+
+.passwordHolder {
+    position: relative;
+
+    width: 100%;
+}
+
+.password {
+    width: 100%;
+}
+
+.AiFillEye {
+    position: absolute;
+    color: black;
+    right: 1rem;
+    top: 0.6rem;
+
+
+}
+
+@media (width < 400px) {
+    .signUpForm {
+        width: 70%;
+    }
+}
