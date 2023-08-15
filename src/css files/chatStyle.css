@@ -1,0 +1,50 @@
+.receiver {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+
+}
+
+
+.chatPupple {
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+  width: fit-content;
+  background-color: rgba(23, 49, 36, 0.655);
+  padding: 0 30px;
+  margin: 20px;
+  border-radius: 30px;
+}
+
+.FaPoo {
+  position: absolute;
+  bottom: -1rem;
+  right: 0;
+  background-color: wheat;
+  padding: 3px 3px;
+  border-radius: 50%;
+  font-size: 25px;
+  color: rgb(135, 60, 32);
+  cursor: pointer;
+}
+
+.poopCounter {
+  position: absolute;
+  right: 0;
+  bottom: -3rem;
+  color: red;
+  font-weight: 700;
+}
+
+.FaTrashAlt {
+  position: absolute;
+  right: 0;
+  bottom: -1rem;
+  font-size: 20px;
+  background-color: red;
+  padding: 5px 5px;
+  border-radius: 50%;
+}

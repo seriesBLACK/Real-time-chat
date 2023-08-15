@@ -2,8 +2,7 @@ import { signInWithPopup, createUserWithEmailAndPassword, updateProfile } from "
 import { FcGoogle } from "react-icons/fc";
 import Cookies from "universal-cookie";
 import "../css files/signUp.css";
-import { auth, provider, db } from '../firebase';
-import { doc, setDoc } from "firebase/firestore";
+import { auth, provider } from '../firebase';
 import { Link } from "react-router-dom";
 import { AiFillEye } from "react-icons/ai";
 import { useState } from "react";
@@ -11,6 +10,7 @@ import { useState } from "react";
 
 
 export default function Oath(props) {
+
     const cookie = new Cookies();
     const { setIsAuth } = props;
 
@@ -32,16 +32,13 @@ export default function Oath(props) {
 
 
 
-    const signUpWithGoogle = async (e) => {
-        e.preventDefault();
+    const signUpWithGoogle = async () => {
         try {
-
             const result = await signInWithPopup(auth, provider);
             cookie.set('auth-token', result.user.refreshToken);
-            console.log('setIsAuth(true);')
             setIsAuth(true);
         } catch (error) {
-            console.log(error)
+            console.log('couldnt use google' + error)
         }
     };
 
@@ -53,12 +50,10 @@ export default function Oath(props) {
             const userCredatial = createUserWithEmailAndPassword(auth, email, password);
             const user = (await userCredatial).user;
             cookie.set('auth-token', user.refreshToken);
-            setIsAuth(true);
             updateProfile(auth.currentUser, {
                 displayName: name,
             });
-            await setDoc(doc(db, "users", user.uid), formData)
-            console.log("sign-up");
+            setIsAuth(true)
         } catch (error) {
             console.error(error)
         }
@@ -69,7 +64,7 @@ export default function Oath(props) {
         <div className='signUpContainer'>
             <h2>Sign up to enter a family friendly chat app </h2>
             <form className='signUpForm' onSubmit={onSubmit} >
-                <input type="text" id='name' placeholder='Enter a Nick-name' value={name} onChange={onChange} />
+                <input required type="text" id='name' placeholder='Enter a Nick-name' value={name} onChange={onChange} />
                 <input type="email" placeholder='enter an email ' id='email' value={email} onChange={onChange} />
                 <div className="passwordHolder">
 

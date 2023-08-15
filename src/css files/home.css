@@ -1,0 +1,53 @@
+.chat-app {
+    height: 93.9vh;
+    margin-top: 96px;
+    background: linear-gradient(360deg, rgba(131, 58, 180, 1) 0%, rgba(0, 0, 0, 1) 100%);
+
+}
+
+.FiLogOut {
+    color: red;
+    font-size: 25px;
+    position: fixed;
+    left: 1%;
+    border-radius: 50%;
+    bottom: 4%;
+    background-color: black;
+    padding: 5px 5px;
+}
+
+.messages {
+    height: 70vh;
+    overflow: auto;
+}
+
+.chat-app-form {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.chat-app-form input {
+    height: 40px;
+    width: 80%;
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+}
+
+
+.chatApp-icon {
+    left: 39%;
+    font-size: 25px;
+    padding: 10px 10px;
+    color: white;
+    background-color: rgb(73, 120, 103);
+    border-radius: 50%;
+}
+
+.hiddenBtn {
+    background-color: transparent;
+    border: none;
+}
