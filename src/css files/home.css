@@ -1,5 +1,5 @@
 .chat-app {
-    height: 93.9vh;
+    height: 87vh;
     margin-top: 96px;
     background: linear-gradient(360deg, rgba(131, 58, 180, 1) 0%, rgba(0, 0, 0, 1) 100%);
 
@@ -7,11 +7,9 @@
 
 .FiLogOut {
     color: red;
+    margin-right: 20px;
     font-size: 25px;
-    position: fixed;
-    left: 1%;
     border-radius: 50%;
-    bottom: 4%;
     background-color: black;
     padding: 5px 5px;
 }
@@ -22,7 +20,7 @@
 }
 
 .chat-app-form {
-    height: 20vh;
+    height: 16vh;
     display: flex;
     justify-content: center;
     align-items: center;

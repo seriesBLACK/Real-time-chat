@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { auth, db } from "../firebase";
 import "../css files/home.css";
 import { addDoc, collection, limit, onSnapshot, orderBy, query, serverTimestamp } from "firebase/firestore";
@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import TextingSpace from "../components/TextingSpace";
 
 export default function Home() {
+	const ref = useRef(null);
 	const navigate = useNavigate();
 	const cookie = new Cookies();
 	const [message, setMessage] = useState("");
@@ -43,6 +44,7 @@ export default function Home() {
 				});
 				setNewMessage(messages);
 			});
+			ref.current.scrollIntoView({ behavior: 'smooth' })
 		});
 		return () => save();
 	}, []);
@@ -62,7 +64,6 @@ export default function Home() {
 		<div className="chat-app">
 
 			<div className="messages">
-				<FiLogOut onClick={logOut} className="FiLogOut" />
 
 
 				{newMessage && newMessage.map((newMessage) => (
@@ -70,14 +71,18 @@ export default function Home() {
 					<TextingSpace newMessage={newMessage} key={newMessage.id} userId={newMessage.userId} />
 
 				))}
+				<span ref={ref}></span>
 			</div>
 			<form onSubmit={onSubmit} className="chat-app-form">
+				<FiLogOut onClick={logOut} className="FiLogOut" />
 				<input type="text" placeholder="Send a massage" value={message} onChange={(e) => setMessage(e.target.value)} />
 				<button className="hiddenBtn" type="submit">
 
 					<BiSend className="chatApp-icon" />
 				</button>
+
 			</form>
+
 
 		</div>
 	);
